@@ -19,7 +19,7 @@ npm install
 nodemon serverj.js OR node server.js
 ```
 
-####Start the frontend server
+#### Start the frontend server
 
 ```
 cd frontend
