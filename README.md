@@ -3,15 +3,15 @@
 A To DO List app integrated with genai for automatic sorting of tasks based on their logical order of importance, as well as priority(rank) entered by the user.
 
 
-###Steps to replicate:
+### Steps to replicate:
 
-####Clone the repository
+#### Clone the repository
 
 ```
 git clone https://github.com/Kaustubh251002/ToDoGenai.git
 ```
 
-####Start the backend server
+#### Start the backend server
 
 ```
 cd backend
