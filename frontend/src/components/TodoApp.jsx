@@ -40,7 +40,7 @@ const TodoApp = () => {
       }
       const data = response.data;
       console.log(data)
-      orderTasks(JSON.parse(JSON.stringify(response.data)));
+      orderTasks(JSON.parse(JSON.stringify(response.data.todos)));
     }catch(error){
       console.error(error);
     }
@@ -50,6 +50,7 @@ const TodoApp = () => {
     console.log(1, todoList)
 
     try {
+      const temp = [];
       const response = await fetch(serverUrl, {
         method: 'POST',
         headers: {
@@ -64,7 +65,7 @@ const TodoApp = () => {
 
       const data = await response.json();
       console.log(data);
-      setTasks(data.generatedText.todos[0] || []);
+      setTasks(data.generatedText || []);
       console.log(tasks);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -116,6 +117,10 @@ const TodoApp = () => {
     console.log(tasks);
     
     getTasks(email);
+
+    setErrorMessage('');
+    setNewTask('');
+    setRank('');
   };
 
   const handleDeleteTask = async(id) => {

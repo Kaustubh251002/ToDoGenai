@@ -12,7 +12,7 @@ const client = new TextServiceClient({
 async function generateTodoListText(todoList) {
   const todoListJsonString = JSON.stringify(todoList);
 
-  const prompt = "This is a todo list, fill in the rank for each task, based on their due date and logical order of importance. Display in increasing order of importance\n\n" + todoListJsonString;
+  const prompt = "This is a todo list, fill in the rank for each task, based on their due date (most important) and logical order of importance. Display in increasing order of importance\n\n" + todoListJsonString;
 
   try {
     const result = await client.generateText({

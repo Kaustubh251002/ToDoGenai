@@ -49,7 +49,7 @@ async function getTodosByEmail(email) {
   try {
     const result = (await collection.find({email}).toArray()).map((i) => i.todos);
     console.log(1,result[0]);
-    return result;
+    return result[0];
   } catch (error) {
     console.error('Error retrieving todos', error);
     throw error;
@@ -65,18 +65,6 @@ async function updateTodosByEmail(email, updatedTodos) {
     console.log(`Todos updated for ${email}`);
   } catch (error) {
     console.error('Error updating todos', error);
-  } 
-}
-
-async function deleteTodosByEmail(email) {
-  const db = await connectToDatabase();
-  const collection = db.collection(collectionName);
-
-  try {
-    await collection.deleteOne({ email });
-    console.log(`Todos deleted for ${email}`);
-  } catch (error) {
-    console.error('Error deleting todos', error);
   } 
 }
 
