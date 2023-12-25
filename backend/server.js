@@ -4,8 +4,8 @@ const cors = require('cors');
 const { generateTodoListText } = require('./apicall');
 const { MongoClient } = require('mongodb');
 
-const databaseUrl = 'mongodb+srv://kmishra2510:1234567890@cluster0.yzew6xg.mongodb.net/?retryWrites=true&w=majority';
-const collectionName = 'todolist_db';
+const databaseUrl = ''; //Your MONGODB Atlas connection URL
+const collectionName = ''; //Your Collection name
 
 const app = express();
 
